@@ -3,19 +3,15 @@ html {
 }
 body {
     width: 600px;
-
+    margin : auto;
     background-color: #533EED;
     padding: 0 20px 20px 20px;
     border: 5px solid black;
 }
 h1,button {
-    padding: 20px 0;
+    justify-content: center;
     color: #0e292e;
 }
 h1{
-    margin : auto auto;
     text-shadow: 3px 3px 1px #7a7a7a;
-}
-button {
-    margin : 50 auto;
 }
