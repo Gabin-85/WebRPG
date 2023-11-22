@@ -3,7 +3,7 @@ html {
 }
 body {
     width: 600px;
-    margin: auto auto;
+
     background-color: #533EED;
     padding: 0 20px 20px 20px;
     border: 5px solid black;
@@ -17,5 +17,5 @@ h1{
     text-shadow: 3px 3px 1px #7a7a7a;
 }
 button {
-    margin : auto+50 auto;
+    margin : 50 auto;
 }
