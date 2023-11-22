@@ -9,10 +9,13 @@ body {
     border: 5px solid black;
 }
 h1,button {
-    margin: 0;
     padding: 20px 0;
     color: #0e292e;
 }
 h1{
+    margin : auto;
     text-shadow: 3px 3px 1px #7a7a7a;
+}
+button {
+    margin : auto+50;
 }
