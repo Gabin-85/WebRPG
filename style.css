@@ -2,5 +2,7 @@ h1,
 button
 {
 color : blue
-font-family : Comics_Sans_MS
+}
+html {
+    font-family: Comics_Sans_MS;
 }
