@@ -3,6 +3,8 @@ function combat() {
     hp = localStorage.getItem("hp")
     reflexes = localStorage.getItem("reflexes")
     tech = localStorage.getItem("tech")
+    div = document.getElementById('fight')
+    div.innerHTML = "<button ></button>"
 }
 
 function checkPsychose() {
