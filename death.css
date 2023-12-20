@@ -1,0 +1,27 @@
+#death_message {
+  width: 400px;
+    background-color: #161414;
+    margin: 20% auto;
+    border: 5px outset #585858
+}
+h1{
+    text-align: center;
+    color: red;
+    font-size: 60px;
+    offset: center;
+  }
+h3{
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    text-shadow: 2px 2px 1px #695f5f;
+    margin
+}
+
+/* Quelqu'un peut dire a quoi ça sert : 
+li {
+    color: red;
+    width: 500px;
+    border: 1px solid black;
+  }
+*/
