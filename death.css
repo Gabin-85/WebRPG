@@ -15,9 +15,7 @@ h3{
     color: black;
     font-size: 20px;
     text-shadow: 2px 2px 1px #695f5f;
-    margin
 }
-
 /* tremblement du message */
 .death:hover {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;

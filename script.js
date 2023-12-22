@@ -1,14 +1,68 @@
 // Entièrement fait par Soullard Syméon
 //Exactement, je confirme - Gabin
-function combat(enemy) {
-    force = localStorage.getItem("force")
+function combat() {
+    enemy = localStorage.getItem("enemy")
+    enemy = enemy.split(",")
+    enemyName = enemy[0]
+    enemyHp = enemy[1]
     hp = localStorage.getItem("hp")
-    reflexes = localStorage.getItem("reflexes")
-    tech = localStorage.getItem("tech")
-    div = document.getElementById('fight')
-    div.innerHTML = "<button id='cac'></button><button id='distance'></button><button id='tech'></button>"
+    div = document.getElementById('combat')
+    div.innerHTML = `<p>${enemyName} : ${enemyHp} hp.  Vous : ${hp} hp.</p><button id='cac' onclick='action("cac")'>attaque de corps à corps</button><button id='distance' onclick='action("distance")'>attaque de distance</button><button id='tech' onclick='action("tech")'>attaque spéciale</button>`
 }
-
+function action(action) {
+    force = parseInt(localStorage.getItem("force"))
+    hp = parseInt(localStorage.getItem("hp"))
+    maxHp = parseInt(localStorage.getItem("maxHp"))
+    reflexes = parseInt(localStorage.getItem("reflexes"))
+    enemy = localStorage.getItem("enemy")
+    enemy = enemy.split(",")
+    enemyName = enemy[0]
+    enemyHp = parseInt(enemy[1])
+    enemyForce = parseInt(enemy[2])
+    if (action == "cac") {
+        enemyHp = enemyHp - force
+        localStorage.setItem("enemy", enemyName + "," + enemyHp + "," + enemyForce)
+        localStorage.setItem("dodgeRate", Math.round(Math.random() * 100)+reflexes)
+    }
+    if (action == "distance") {
+        damage = Math.round(force / 2)
+        enemyHp = enemyHp - damage
+        localStorage.setItem("enemy", enemyName + "," + enemyHp + "," + enemyForce)
+        localStorage.setItem("dodgeRate", Math.round(Math.random() * 100)+25+reflexes)
+    }
+    if (action == "tech") {
+        enemyHp = enemyHp - tech
+        localStorage.setItem("enemy", enemyName + "," + enemyHp + "," + enemyForce)
+        localStorage.setItem("dodgeRate", Math.round(Math.random() * 100)+reflexes)
+    }
+    if (enemyHp <= 0) {
+        hp = maxHp
+        document.getElementById("combat").style.display = "none"
+        document.getElementById("victory").style.display = "block"
+        return
+    } else {
+        enemyAttack()
+    }    
+}
+function enemyAttack() {
+    // implement the dodgeRate
+    enemy = localStorage.getItem("enemy")
+    dodgeRate = localStorage.getItem("dodgeRate")
+    enemy = enemy.split(",")
+    enemyName = enemy[0]
+    enemyForce = enemy[2]
+    hp = localStorage.getItem("hp")
+    if (parseInt(dodgeRate) < 50) {
+        hp = hp - enemyForce
+        localStorage.setItem("hp", hp)
+    }
+    localStorage.setItem("hp", hp)
+    if (hp <= 0) {
+        death("Vous vous êtes fait tuer par " + enemyName)
+    } else {
+        combat()
+    }
+}
 function checkPsychose() {
     psy = localStorage.getItem("psy")
     if (psy >= 100) {
@@ -18,7 +72,7 @@ function checkPsychose() {
 
 function death(deathMessage) {
     localStorage.setItem("deathMessage", deathMessage)
-    window.location.href = "" // le lien vers la page
+    window.location.href = "deathscreen.html" // le lien vers la page
 }
 
 function init() {
@@ -26,6 +80,7 @@ function init() {
     localStorage.setItem("pseudo", pseudo)
     localStorage.setItem("force", "5")
     localStorage.setItem("hp", "5")
+    localStorage.setItem("maxHp", "5")
     localStorage.setItem("reflexes", "5")
     localStorage.setItem("tech", "5")
     localStorage.setItem("psy", "5")
@@ -33,17 +88,13 @@ function init() {
     window.location = 'Start/mission.html'
 }
 
-class enemy {
-    constructor(name, hp, force) {
-        this.name = name;
-        this.hp = hp;
-        this.force = force;
-    }
+function createEnemy(name, hp, force) {
+    localStorage.setItem("enemy", name + "," + hp + "," + force)
 }
 
-JohnCena = new enemy("John Cena", 150, 7)
-yakuza = new enemy("Yakuza", 50, 1)
-gardes = new enemy("Gardes", 50, 1)
-cadres = new enemy("Cadres", 60, 3)
-MelonMusk = new enemy("Melon Musk", 130, 6)
-RickAstley = new enemy("Rick Astley", 225, 11)
+createEnemy("John Cena", 150, 7)
+createEnemy("Yakuza", 50, 1)
+createEnemy("Gardes", 50, 1)
+createEnemy("Cadres", 60, 3)
+createEnemy("Melon Musk", 130, 6)
+createEnemy("Rick Astley", 225, 11)
