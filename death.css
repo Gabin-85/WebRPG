@@ -1,0 +1,53 @@
+#div_death_message {
+  width: 400px;
+    background-color: #161414;
+    margin: 20% auto;
+    border: 5px outset #585858
+}
+h1{
+    text-align: center;
+    color: red;
+    font-size: 60px;
+    offset: center;
+  }
+h3{
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    text-shadow: 2px 2px 1px #695f5f;
+    margin
+}
+
+/* tremblement du message */
+.death:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/* Quelqu'un peut dire a quoi ça sert : 
+li {
+    color: red;
+    width: 500px;
+    border: 1px solid black;
+  }
+*/
