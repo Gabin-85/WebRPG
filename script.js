@@ -95,6 +95,7 @@ function createEnemy(name, hp, force) {
 createEnemy("John Cena", 150, 7)
 createEnemy("Yakuza", 50, 1)
 createEnemy("Gardes", 50, 1)
+createEnemy("Gorilles", 50, 3)
 createEnemy("Cadres", 60, 3)
 createEnemy("Melon Musk", 130, 6)
 createEnemy("Rick Astley", 225, 11)
