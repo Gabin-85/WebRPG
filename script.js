@@ -14,6 +14,7 @@ function action(action) {
     hp = parseInt(localStorage.getItem("hp"))
     maxHp = parseInt(localStorage.getItem("maxHp"))
     reflexes = parseInt(localStorage.getItem("reflexes"))
+    tech = parseInt(localStorage.getItem("tech"))
     enemy = localStorage.getItem("enemy")
     enemy = enemy.split(",")
     enemyName = enemy[0]
@@ -45,7 +46,6 @@ function action(action) {
     }    
 }
 function enemyAttack() {
-    // implement the dodgeRate
     enemy = localStorage.getItem("enemy")
     dodgeRate = localStorage.getItem("dodgeRate")
     enemy = enemy.split(",")
@@ -92,12 +92,12 @@ function createEnemy(name, hp, force) {
     localStorage.setItem("enemy", name + "," + hp + "," + force)
 }
 
-createEnemy("John Cena", 150, 7)
-createEnemy("Yakuza", 50, 1)
-createEnemy("Gardes", 50, 1)
-createEnemy("Gorilles", 50, 3)
-createEnemy("Cadres", 60, 3)
-createEnemy("Cyber Psycho", 80, 4)
-createEnemy("Nikolaï", 65, 6)
-createEnemy("Melon Musk", 130, 6)
-createEnemy("Rick Astley", 225, 11)
+// createEnemy("John Cena", 150, 7)
+// createEnemy("Yakuza", 50, 1)
+// createEnemy("Gardes", 50, 1)
+// createEnemy("Gorilles", 50, 3)
+// createEnemy("Cadres", 60, 3)
+// createEnemy("Cyber Psycho", 80, 4)
+// createEnemy("Nikolaï", 65, 6)
+// createEnemy("Melon Musk", 130, 6)
+// createEnemy("Rick Astley", 225, 11)
