@@ -25,7 +25,7 @@ function action(action) {
         localStorage.setItem("dodgeRate", Math.round(Math.random() * 100)+reflexes)
     }
     if (action == "distance") {
-        damage = Math.round(force / 2)
+        damage = Math.round(tech / 2 + force / 5)
         enemyHp = enemyHp - damage
         localStorage.setItem("enemy", enemyName + "," + enemyHp + "," + enemyForce)
         localStorage.setItem("dodgeRate", Math.round(Math.random() * 100)+25+reflexes)
