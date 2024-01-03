@@ -10,7 +10,7 @@ Roue des couleur :
 
 ## Comment créer une bataille ?
 
-Voici le html de base pour démarrer une bataille : 
+Voici le html de base pour démarrer une bataille :
 
 ```html
 <!DOCTYPE html>
@@ -21,9 +21,9 @@ Voici le html de base pour démarrer une bataille :
   <script src="../script.js"></script>
   <title>Document</title>
 </head>
-<body onload="combat(); createEnemy('Nom de l'ennemi', pvs de l'ennemi, atk de l'ennemi)">
+<body onload="createEnemy('Nom de l'ennemi', pvs de l'ennemi, atk de l'ennemi); combat(); ">
   <!--Les éventuelles lignes d'explications / situation-->
-  <div id="combat">
+  <div id="combat"></div>
   <div id="victory" style="display: none;"> 
     <!--Ce qui s'affiche une fois le combat gagné-->
   </div>

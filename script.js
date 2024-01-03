@@ -1,5 +1,12 @@
 // Entièrement fait par Soullard Syméon
 //Exactement, je confirme - Gabin
+hp = localStorage.getItem("hp")
+if (hp == null) {
+    window.location = 'index.html'
+} else if (hp <= 0) {
+    death("essayez pas de ressuciter hophophop")
+}
+
 function combat() {
     enemy = localStorage.getItem("enemy")
     enemy = enemy.split(",")
@@ -72,7 +79,7 @@ function checkPsychose() {
 
 function death(deathMessage) {
     localStorage.setItem("deathMessage", deathMessage)
-    window.location.href = "deathscreen.html" // le lien vers la page
+    window.location.href = "/deathscreen.html" // le lien vers la page
 }
 
 function init() {
