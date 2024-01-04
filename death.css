@@ -6,7 +6,8 @@ body {
   width: 400px;
     background-color: #161414;
     margin: 20% auto;
-    border: 5px outset #585858
+    border: 5px outset #585858;
+    border-radius: 20px;
 }
 h1{
     text-align: center;
