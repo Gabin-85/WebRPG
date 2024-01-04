@@ -1,16 +1,39 @@
 body {
     height: 100%;
     overflow-y: auto;
+    justify-content:  center;
 }
 #div_message{ 
     color: #ffffff;
     background-color: rgba(100, 100, 100, 0.5); 
-    position: absolute;
-    bottom: 2%;
-    left: 50cqmin;
-    right: 50cqmin;
+    width: fit-content;
     padding: 0 20px 20px 20px;
     border: 5px outset black;
     border-radius: 15px;
     backdrop-filter: blur(5px);
+
+    position: fixed;
+    left: 50%;
+    bottom: 10px;
+    transform: translate(-50%, 0);
+    margin: 0 auto;
+}
+#center{
+    text-align: center;
+}
+button{
+    border-radius: 15px;
+    height: 30px;
+    width: 100px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
+}
+button:hover {
+    height: 40px;
+    width: 120px;
+    color: black;
+    background-color: rgb(255, 255, 255,0.5);
+    border: 2px solid black;
+    transition: 0.6s;
 }

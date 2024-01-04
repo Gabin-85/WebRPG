@@ -111,3 +111,474 @@ function createEnemy(name, hp, force) {
 // createEnemy("Nikolaï", 65, 6)
 // createEnemy("Melon Musk", 130, 6)
 // createEnemy("Rick Astley", 225, 11)
+
+function getItem(name, type) {
+    items = [
+        [
+            {
+                name: "Exemple",
+                vie: 0,
+                force: 0,
+                reflexes: 0,
+                tech: 0,
+                psy: 0
+            },
+            {
+                name: "Katana",
+                vie: 0,
+                force: +5,
+                reflexes: 0,
+                tech: 0,
+                psy: 0
+            },
+            {
+                name: "Lames des lancers",
+                vie: 0,
+                force: +3,
+                reflexes: +1,
+                tech: 0,
+                psy: 0
+            },
+            {
+                name: "Masse",
+                vie: 0,
+                force: +7,
+                reflexes: -1,
+                tech: 0,
+                psy: 0
+            },
+            {
+                name: "Pistolet de poing",
+                vie: 0,
+                force: 3,
+                reflexes: 0,
+                tech: 3,
+                psy: 0
+            },
+            {
+                name: "Fusil d'assault",
+                vie: 0,
+                force: 0,
+                reflexes: 0,
+                tech: 5,
+                psy: 0
+            },
+            {
+                name: "Fusil à pompes",
+                vie: 0,
+                force: 1,
+                reflexes: 0,
+                tech: 7,
+                psy: 0
+            },
+            {
+                name: "Mitrailleuse",
+                vie: 0,
+                force: 0,
+                reflexes: 1,
+                tech: 4,
+                psy: 0
+            },
+            {
+                name: "Sniper",
+                vie: 0,
+                force: 0,
+                reflexes: -2,
+                tech: 10,
+                psy: 0
+            },
+            {
+                name: "Minigun",
+                vie: 0,
+                force: 0,
+                reflexes: -7,
+                tech: 20,
+                psy: 0
+            },
+        ],
+        [
+            {
+                name: "Avant bras renforcé",
+                vie: 5,
+                force: 0,
+                reflexes: 0,
+                tech: 0,
+                psy: 3,
+                type: "avant-bras"
+            },
+            {
+                name: "Avant bras lames",
+                vie: 4,
+                force: 5,
+                reflexes: 0,
+                tech: 0,
+                psy: 6,
+                type: "avant-bras"
+            },
+            {
+                name: "Avant bras canons",
+                vie: 4,
+                force: 0,
+                reflexes: 0,
+                tech: 5,
+                psy: 6,
+                type: "avant-bras"
+            },
+            {
+                name: "ligaments mécanique",
+                vie: 1,
+                force: 0,
+                reflexes: 3,
+                tech: 0,
+                psy: 3,
+                type: "ligament"
+            },
+            {
+                name: "bras renforcé",
+                vie: 5,
+                force: 0,
+                reflexes: 0,
+                tech: 0,
+                psy: 3,
+                type: "bras"
+            },
+            {
+                name: "bras en titane allégé",
+                vie: 8,
+                force: 0,
+                reflexes: 5,
+                tech: 0,
+                psy: 8,
+                type: "bras"
+            },
+            {
+                name: "bras d'assailant",
+                vie: 6,
+                force: 5,
+                reflexes: 2,
+                tech: 3,
+                psy: 10,
+                type: "bras"
+            },
+            {
+                name: "Triceps modifié",
+                vie: 0,
+                force: 0,
+                reflexes: 3,
+                tech: 2,
+                psy: 4,
+                type: "triceps"
+            },
+            {
+                name: "Triceps bagareur",
+                vie: 0,
+                force: 4,
+                reflexes: 4,
+                tech: 0,
+                psy: 6,
+                type: "triceps"
+            },
+            {
+                name: "épaule de visée",
+                vie: 2,
+                force: 0,
+                reflexes: 1,
+                tech: 3,
+                psy: 3,
+                type: "épaule"
+            },
+            {
+                name: "épaule de pugiste",
+                vie: 0,
+                force: 5,
+                reflexes: 0,
+                tech: 0,
+                psy: 2,
+                type: "épaule"
+            },
+            {
+                name: "Dos renforcé",
+                vie: 5,
+                force: 0,
+                reflexes: 0,
+                tech: 0,
+                psy: 3,
+                type: "Dos"
+            },
+            {
+                name: "Dos à impulsion",
+                vie: 7,
+                force: 0,
+                reflexes: 3,
+                tech: 1,
+                psy: 5,
+                type: "Dos"
+            },
+            {
+                name: "Dos en titane",
+                vie: 15,
+                force: 0,
+                reflexes: 0,
+                tech: 0,
+                psy: 10,
+                type: "Dos"
+            },
+            
+            {
+                name: "Colone de mobilité",
+                vie: 0,
+                force: 0,
+                reflexes: 5,
+                tech: 0,
+                psy: 3,
+                type: "Colone"
+            },
+            {
+                name: "Colone en titane",
+                vie: 5,
+                force: 0,
+                reflexes: 0,
+                tech: 0,
+                psy: 3,
+                type: "Colone"
+            },
+            {
+                name: "Colone pyrotechnique",
+                vie: 3,
+                force: 0,
+                reflexes: 0,
+                tech: 5,
+                psy: 4,
+                type: "Colone"
+            },
+            {
+                name: "Os en acier",
+                vie: 5,
+                force: 0,
+                reflexes: 0,
+                tech: 0,
+                psy: 3,
+                type: "Os"
+            },
+            {
+                name: "Os en titane",
+                vie: 10,
+                force: 0,
+                reflexes: -1,
+                tech: 0,
+                psy: 5,
+                type: "Os"
+            },
+            {
+                name: "Cou renforcé",
+                vie: 3,
+                force: 0,
+                reflexes: 0,
+                tech: 0,
+                psy: 1,
+                type: "Cou"
+            },
+            {
+                name: "Cou flexible",
+                vie: 2,
+                force: 0,
+                reflexes: 3,
+                tech: 0,
+                psy: 2,
+                type: "Os"
+            },
+            {
+                name: "Poitrail renforcé",
+                vie: 10,
+                force: 0,
+                reflexes: 0,
+                tech: 0,
+                psy: 5,
+                type: "Poitrine"
+            },
+            {
+                name: "Poitrail canon",
+                vie: 8,
+                force: 0,
+                reflexes: 0,
+                tech: 10,
+                psy: 8,
+                type: "Poitrine"
+            },
+            {
+                name: "Poitrail de vitesse",
+                vie: 4,
+                force: 0,
+                reflexes: 5,
+                tech: 0,
+                psy: 4,
+                type: "Poitrine"
+            },
+            {
+                name: "Jambe de combat",
+                vie: 0,
+                force: 5,
+                reflexes: 0,
+                tech: 0,
+                psy: 3,
+                type: "Jambe"
+            },
+            {
+                name: "Jambe de renforcé",
+                vie: 5,
+                force: 0,
+                reflexes: 0,
+                tech: 0,
+                psy: 3,
+                type: "Jambe"
+            },
+            {
+                name: "Jambe de tireur",
+                vie: 0,
+                force: 0,
+                reflexes: 3,
+                tech: 5,
+                psy: 5,
+                type: "Jambe"
+            },
+            
+            {
+                name: "Yeux bioniques",
+                vie: 0,
+                force: 0,
+                reflexes: 15,
+                tech: 0,
+                psy: 8,
+                type: "Yeux"
+            },
+            
+            {
+                name: "Yeux  de fauxcon",
+                vie: 0,
+                force: 0,
+                reflexes: 25,
+                tech: 0,
+                psy: 12,
+                type: "Yeux"
+            },
+            
+            
+            {
+                name: "oreille sonar",
+                vie: 0,
+                force: 0,
+                reflexes: 15,
+                tech: 0,
+                psy: 8,
+                type: "oreille"
+            },
+            {
+                name: "oreille de grub",
+                vie: 0,
+                force: 0,
+                reflexes: 25,
+                tech: 0,
+                psy: 12,
+                type: "oreille"
+            },
+            {
+                name: "neurone artificiel",
+                vie: 0,
+                force: 0,
+                reflexes: 15,
+                tech: 5,
+                psy: 12,
+                type: "neurone"
+            },
+            {
+                name: "neurone de reflexion",
+                vie: 0,
+                force: 0,
+                reflexes: 5,
+                tech: 0,
+                psy: -5,
+                type: "neurone"
+            },
+        
+            
+        ],
+        [
+            {
+                name: "Médoc anti dépression",
+                vie: 0,
+                force: 0,
+                reflexes: 0,
+                tech: 0,
+                psy: -5
+            },
+            {
+                name: "Médoc de fatigue nomade",
+                vie: 0,
+                force: 0,
+                reflexes: 0,
+                tech: 0,
+                psy: -10
+            },
+            {
+                name: "Médoc de qualité militaire",
+                vie: 0,
+                force: 0,
+                reflexes: 0,
+                tech: 0,
+                psy: -30
+            },
+        ],
+        [
+            {
+                name: "avant bras blue Fire Mark II",
+                vie: 7,
+                force: 0,
+                reflexes: 0,
+                tech: 10,
+                psy: 8,
+                type: "avant-bras"
+            },
+            {
+                name: "colone Sandevistan Mark III",
+                vie: 5,
+                force: 0,
+                reflexes: 20,
+                tech: 2,
+                psy: 15,
+                type: "Colone"
+            },
+            {
+                name: "poitrail de cosmonaut noir V1",
+                vie: 10,
+                force: 5,
+                reflexes: 5,
+                tech: 0,
+                psy: 9,
+                type: "Poitrine"
+            },
+            {
+                name: "neurone de Méga Corporation Antalis V2",
+                vie: 0,
+                force: 5,
+                reflexes: 40,
+                tech: 20,
+                psy: 40,
+                type: "neurone"
+            },
+            {
+                name: "neurone de John Cena artificiel",
+                vie: 0,
+                force: 0,
+                reflexes: 10,
+                tech: 5,
+                psy: -20,
+                type: "neurone"
+            },
+        ]
+    ]
+    for (let i = 0; i < items[type].length; i++) {
+        if (items[type][i].name == name) {
+            return items[type][i]
+        }
+    }
+}
