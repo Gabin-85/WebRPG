@@ -4,6 +4,7 @@ body {
     justify-content:  center;
 }
 #div_message{ 
+    font-size: 100%;
     color: #ffffff;
     background-color: rgba(100, 100, 100, 0.5); 
     width: fit-content;
@@ -18,21 +19,6 @@ body {
     transform: translate(-50%, 0);
     margin: 0 auto;
 }
-#div_alert{
-    color: #ffffff;
-    background-color: rgba(50, 50, 50, 0.7); 
-    width: fit-content;
-    padding: 0 20px 0 20px;
-    border: 5px outset rgb(255, 255, 255);
-    border-radius: 15px;
-    backdrop-filter: blur(5px);
-
-    position: fixed;
-    left: 50%;
-    top:50%;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
-}
 #barray{
     text-align: center;
 }
@@ -44,6 +30,8 @@ button{
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     border: 2px solid white;
+    margin-bottom: 10px;
+    transition: 0.4s;
 }
 button:hover {
     height: 40px;
@@ -52,4 +40,27 @@ button:hover {
     background-color: rgb(255, 255, 255,0.5);
     border: 2px solid black;
     transition: 0.6s;
+}
+#div_alert{
+    font-size: 120%;
+    color: #777777;   
+    width: fit-content;
+    padding: 0 20px 0 20px;
+    border: 5px outset rgb(104, 104, 104);
+    border-radius: 15px;
+    backdrop-filter: blur(0px);
+
+    position: fixed;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    transition: 999999s ;
+    
+}
+#div_alert:hover{
+    color: #ffffff;
+    border: 5px outset rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    transition: 2s;
 }
