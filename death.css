@@ -1,3 +1,7 @@
+body {
+  height: 100%;
+  overflow-y: hidden;
+}
 #div_death_message {
   width: 400px;
     background-color: #161414;
@@ -41,11 +45,3 @@ h3{
     transform: translate3d(4px, 0, 0);
   }
 }
-
-/* Quelqu'un peut dire a quoi ça sert : 
-li {
-    color: red;
-    width: 500px;
-    border: 1px solid black;
-  }
-*/

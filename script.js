@@ -1,5 +1,6 @@
 // Entièrement fait par Soullard Syméon
 //Exactement, je confirme - Gabin
+
 hp = localStorage.getItem("hp")
 if (hp == null) {
     window.location = 'index.html'

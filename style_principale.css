@@ -1,11 +1,16 @@
-html{
-    background-color: #303030;
+body {
+    height: 100%;
+    overflow-y: auto;
 }
 #div_message{ 
-    color: #0e292e;
-    width: 800px;
-    background-color: #7a7a7a;
-    margin: 40% auto;
+    color: #ffffff;
+    background-color: rgba(100, 100, 100, 0.5); 
+    position: absolute;
+    bottom: 2%;
+    left: 50cqmin;
+    right: 50cqmin;
     padding: 0 20px 20px 20px;
     border: 5px outset black;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
 }
