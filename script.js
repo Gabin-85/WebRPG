@@ -1,5 +1,6 @@
-// Entièrement fait par Soullard Syméon
-//Exactement, je confirme - Gabin
+// Entièrement fait par Soullard Syméon -[Syméon]
+//Et luan -[Luan]
+//Je confirme -[Gabin]
 
 localStorage.setItem("hp",5)
 
