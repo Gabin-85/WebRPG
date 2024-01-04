@@ -1,5 +1,5 @@
 // Entièrement fait par Soullard Syméon -[Syméon]
-//Et luan -[Luan]
+//Et luan pour les objets -[Luan]
 //Je confirme -[Gabin]
 
 localStorage.setItem("hp",5)
