@@ -17,9 +17,9 @@ h1{
   }
 h3{
     text-align: center;
-    color: black;
+    color: rgb(255, 246, 246);
     font-size: 20px;
-    text-shadow: 2px 2px 1px #695f5f;
+    text-shadow: 2px 2px 1px #ff0000;
 }
 /* tremblement du message */
 .death:hover {
