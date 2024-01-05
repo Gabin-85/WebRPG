@@ -43,10 +43,10 @@ button:hover {
 }
 #div_alert{
     font-size: 120%;
-    color: #777777;   
+    color: #000000;   
     width: fit-content;
-    padding: 0 20px 0 20px;
-    border: 5px outset rgb(104, 104, 104);
+    padding: 0 20px 20px 20px;
+    border: 5px outset rgb(0, 0, 0);
     border-radius: 15px;
     backdrop-filter: blur(0px);
 
@@ -55,12 +55,86 @@ button:hover {
     top:50%;
     transform: translate(-50%, -50%);
     margin: 0 auto;
-    transition: 999999s ;
+    transition: 2s ;
+}
+
+
+/* Ceci est l'affichage lors d'un combat */
+#pvm{
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    color: #ffffff;
+    background-color:black;
+    position: fixed;
+    left: 20px;
+    bottom: 110px;
+}
+#pve{
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    color: #ffffff;
+    background-color:black;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+.fbut{
+    height: 50px;
+    padding: 20px 20px 20px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    width: 96%;
+    bottom: 5px;
+    position: fixed;
+    font-size: 120%;
+}
+.fbut button{
+    height: 50px;
+    font-size: 120%;
+    margin-right: 10px;
+    margin-left: 10px;
+    color: rgb(255, 255, 255);
+    background-color: black;
+}
+.fbut button:hover{
+    height: 60px;
+    font-size: 140%;
+}
+#tech{
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    margin: 0 auto;
+}
+#tech:hover{
+    color: black;
+    background-color: rgb(59, 121, 255);
+    bottom: 20px;
+    transition: 0.6s;
     
 }
-#div_alert:hover{
-    color: #ffffff;
-    border: 5px outset rgb(255, 255, 255);
-    backdrop-filter: blur(10px);
-    transition: 2s;
+#cac{
+    position: fixed;
+    left: 50%;
+    bottom: 25px;
+    transform: translate(-50%, -0);
+    margin: 0 auto;
+}
+#cac:hover{
+    color: black;
+    bottom: 20px;
+    background-color: rgb(255, 59, 59);
+    transition: 0.6s;
+}
+#distance{
+    position: fixed;
+    left: 25px;
+    bottom: 25px;
+    margin: 0 auto;
+}
+#distance:hover{
+    color: black;
+    background-color: rgb(59, 255, 141);
+    bottom: 20px;
+    transition: 0.6s;
 }

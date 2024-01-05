@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../style_principale.css">
+    <script src="../script.js"></script>
 </head>
 <body onload="createEnemy('Yakuzas supérieur', 11, 2); combat();">
-    <div id="div_message">
-        <p> Vous ouvrez la porte et tomber sur le chef des Yakuzas.</p>
-        <p> Vous allez devoir l'affronter. </p>
-    </div>
     <div id="combat"></div>
     <div id="victory" style="display: none;">
     <p> Sous la menace le chef vous dit qu'il ne sait pas ou est son supérieur.</p>
@@ -19,8 +16,10 @@
     <p> Vous êtes fatigué après ce combat un peu de repos au bar ne serait pas de refus.</p>
     <p> Mais les informations peuvent vite disparaitre si vous n'agissez pas maintenant avec la Méga Corpo.</p>
     <p> Alors, qu'allez vous faire ?</p>
-    <a href="Mission Bar/début.html"><button>Aller au bar</button></a>
-    <a href="Mission Mégacorporation/début.html"><button>Aller à la Méga Corpo</button></a>
+    <div id="barray">
+    <a href="../Mission Bar/début.html"><button>Aller au bar</button></a>
+    <a href="../Mission Mégacorporation/début.html"><button>Aller à la Méga Corpo</button></a>
+    </div>
     </div>
 </body>
 </html>

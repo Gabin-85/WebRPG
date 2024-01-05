@@ -1,14 +1,11 @@
-// Entièrement fait par Soullard Syméon -[Syméon]
-//Et luan pour les objets -[Luan]
-//Je confirme -[Gabin]
-
-localStorage.setItem("hp",5)
-
+// Entièrement fait par Soullard Syméon  --[Syméon]
+//Et luan pour les objets  --[Luan]
+//Je confirme  --[Gabin]
 hp = localStorage.getItem("hp")
 if (hp == null) {
     window.location = 'index.html'
-} else if (hp <= 0) {
-    death("essayez pas de ressuciter hophophop")
+} else if (window.location == 'index.html'){
+    localStorage.setItem("hp",null)
 }
 
 function combat() {
@@ -18,7 +15,9 @@ function combat() {
     enemyHp = enemy[1]
     hp = localStorage.getItem("hp")
     div = document.getElementById('combat')
-    div.innerHTML = `<p>${enemyName} : ${enemyHp} hp.  Vous : ${hp} hp.</p><button id='cac' onclick='action("cac")'>attaque de corps à corps</button><button id='distance' onclick='action("distance")'>attaque de distance</button><button id='tech' onclick='action("tech")'>attaque spéciale</button>`
+    div.innerHTML = `<div id=pve><strong>${enemyName} : ${enemyHp} hp.</strong></div>
+    <div id=pvm><strong>Vous : ${hp} hp.</strong></div>
+    <div class="fbut"><button id='distance' onclick='action("distance")'>Attaque de distance</button><button id='cac' onclick='action("cac")'>Attaque de corps à corps</button><button id='tech' onclick='action("tech")'>Attaque spéciale</button></div>`
 }
 function action(action) {
     force = parseInt(localStorage.getItem("force"))
@@ -96,7 +95,7 @@ function init() {
     localStorage.setItem("tech", "5")
     localStorage.setItem("psy", "5")
     localStorage.setItem("deathMessage", "")
-    window.location = 'Start/mission.html'
+    window.location = 'Mission Yakuzas/mission.html' // envoie sur le début de la mission yakuzas
 }
 
 function createEnemy(name, hp, force) {
