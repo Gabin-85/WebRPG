@@ -2,6 +2,30 @@ body {
     height: 100%;
     overflow-y: hidden;
 }
+input{
+    border-radius: 10px;
+    height: 18px;
+}
+button{
+    border-radius: 15px;
+    height: 25px;
+    width: fit-content;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition: 0.4s;
+}
+button:hover {
+    height:35px;
+    color: black;
+    background-color: rgb(255, 255, 255,0.5);
+    border: 2px solid black;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    transition: 0.6s;
+}
 #div_index_main {
     color: #000000;
     width:fit-content;
