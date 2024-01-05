@@ -1,5 +1,5 @@
-// Entièrement fait par Soullard Syméon  --[Syméon]
-//Et luan pour les objets  --[Luan]
+// Système de combat fait par Soullard Syméon  --[Syméon]
+// Système d'objet fait par Luan  --[Luan]
 //Je confirme  --[Gabin]
 hp = localStorage.getItem("hp")
 if (hp == null) {
@@ -14,10 +14,33 @@ function combat() {
     enemyName = enemy[0]
     enemyHp = enemy[1]
     hp = localStorage.getItem("hp")
-    div = document.getElementById('combat')
-    div.innerHTML = `<div id=pve><strong>${enemyName} : ${enemyHp} hp.</strong></div>
-    <div id=pvm><strong>Vous : ${hp} hp.</strong></div>
-    <div class="fbut"><button id='distance' onclick='action("distance")'>Attaque de distance</button><button id='cac' onclick='action("cac")'>Attaque de corps à corps</button><button id='tech' onclick='action("tech")'>Attaque spéciale</button></div>`
+    div = document.getElementById('combat')     // Ce qui suis est l'html de la page de combat
+    div.innerHTML = `
+
+    <div class=pve>
+    <strong>[${enemyHp} ♥] ${enemyName}</strong>
+        <div class=state><strong>            ${enemyName}</strong><br>
+        <p>
+            Vie : ${enemyHp} <br>
+            Force : ${parseInt(enemy[2])}
+        </p></div>
+    </div>
+
+    <div class=pvm>
+    <strong> ${localStorage.getItem("pseudo")} [${hp} ♥] </strong>
+        <div class=statm><strong>${localStorage.getItem("pseudo")}             </strong><br><p>
+         Vie : ${hp}/${localStorage.getItem("maxHp")} <br>
+         Force : ${localStorage.getItem("force")} <br>
+         Tech : ${localStorage.getItem("tech")} <br>
+         Reflexes : ${localStorage.getItem("reflexes")} 
+        </p></div>
+    </div>
+
+    <div class="fbut">
+    <button id='distance' onclick='action("distance")'>Attaque de distance</button>
+    <button id='cac' onclick='action("cac")'>Attaque de corps à corps</button>
+    <button id='tech' onclick='action("tech")'>Attaque spéciale</button>
+    </div>`
 }
 function action(action) {
     force = parseInt(localStorage.getItem("force"))

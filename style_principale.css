@@ -6,9 +6,9 @@ body {
 #div_message{ 
     font-size: 100%;
     color: #ffffff;
-    background-color: rgba(100, 100, 100, 0.5); 
+    background-color: rgba(100, 100, 100, 0.7); 
     width: fit-content;
-    padding: 0 20px 0 20px;
+    padding: 0px 20px 0px 20px;
     border: 5px outset black;
     border-radius: 15px;
     backdrop-filter: blur(5px);
@@ -46,7 +46,8 @@ button:hover {
     font-size: 120%;
     color: #000000;   
     width: fit-content;
-    padding: 0 20px 20px 20px;
+    padding: 0px 20px 0px 20px;
+    background-color: rgba(100, 100, 100, 0.7);
     border: 5px outset rgb(0, 0, 0);
     border-radius: 15px;
     backdrop-filter: blur(0px);
@@ -56,29 +57,10 @@ button:hover {
     top:50%;
     transform: translate(-50%, -50%);
     margin: 0 auto;
-    transition: 2s ;
 }
 
 
 /* Ceci est l'affichage lors d'un combat */
-#pvm{
-    border-radius: 10px;
-    padding: 10px 10px 10px 10px;
-    color: #ffffff;
-    background-color:black;
-    position: fixed;
-    left: 20px;
-    bottom: 110px;
-}
-#pve{
-    border-radius: 10px;
-    padding: 10px 10px 10px 10px;
-    color: #ffffff;
-    background-color:black;
-    position: fixed;
-    right: 20px;
-    top: 20px;
-}
 .fbut{
     height: 50px;
     padding: 20px 20px 20px 20px;
@@ -114,7 +96,7 @@ button:hover {
 }
 #tech:hover{
     color: black;
-    background-color: rgb(59, 121, 255);
+    background-color: rgb(62, 40, 255);
     bottom: 20px;
     transition: 0.6s;
 }
@@ -142,4 +124,58 @@ button:hover {
     background-color: rgb(59, 255, 141);
     bottom: 20px;
     transition: 0.6s;
+}
+.statm{
+    opacity: 0;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    padding: 10px 20px 0px 20px;
+    color: #ffffff;
+    background-color:black;
+    position: fixed;
+    left: 20px;
+    bottom: 110px;
+    transition: 0.3s;
+}
+.statm:hover{
+    opacity: 1;
+    transition: 0.5s;
+}
+.state{
+    text-align: end;
+    opacity: 0;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 10px;
+    padding: 10px 20px 0px 20px;
+    color: #ffffff;
+    background-color:black;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    transition: 0.3s;
+    
+}
+.state:hover{
+    opacity: 1;
+    transition: 0.5s;
+}
+.pvm{
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    color: #ffffff;
+    background-color:black;
+    position: fixed;
+    left: 20px;
+    bottom: 110px;
+}
+.pve{
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    color: #ffffff;
+    background-color:black;
+    position: fixed;
+    right: 20px;
+    top: 20px;
 }
