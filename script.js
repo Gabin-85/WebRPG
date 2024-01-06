@@ -142,7 +142,7 @@ function getItem(name, type) {
     items = [
         [
             {
-                name: "Exemple",
+                name: "none",
                 vie: 0,
                 force: 0,
                 reflexes: 0,
@@ -158,7 +158,7 @@ function getItem(name, type) {
                 psy: 0
             },
             {
-                name: "Lames des lancers",
+                name: "Lames de lancée",
                 vie: 0,
                 force: +3,
                 reflexes: +1,
@@ -224,7 +224,7 @@ function getItem(name, type) {
         ],
         [
             {
-                name: "Avant bras renforcé",
+                name: "Avant-bras renforcé",
                 vie: 5,
                 force: 0,
                 reflexes: 0,
@@ -233,7 +233,7 @@ function getItem(name, type) {
                 type: "avant-bras"
             },
             {
-                name: "Avant bras lames",
+                name: "Avant-bras lames",
                 vie: 4,
                 force: 5,
                 reflexes: 0,
@@ -242,7 +242,7 @@ function getItem(name, type) {
                 type: "avant-bras"
             },
             {
-                name: "Avant bras canons",
+                name: "Avant-bras canons",
                 vie: 4,
                 force: 0,
                 reflexes: 0,
@@ -251,7 +251,7 @@ function getItem(name, type) {
                 type: "avant-bras"
             },
             {
-                name: "ligaments mécanique",
+                name: "Ligaments mécaniques",
                 vie: 1,
                 force: 0,
                 reflexes: 3,
@@ -260,7 +260,7 @@ function getItem(name, type) {
                 type: "ligament"
             },
             {
-                name: "bras renforcé",
+                name: "Bras renforcé",
                 vie: 5,
                 force: 0,
                 reflexes: 0,
@@ -269,7 +269,7 @@ function getItem(name, type) {
                 type: "bras"
             },
             {
-                name: "bras en titane allégé",
+                name: "Bras en titane allégé",
                 vie: 8,
                 force: 0,
                 reflexes: 5,
@@ -278,7 +278,7 @@ function getItem(name, type) {
                 type: "bras"
             },
             {
-                name: "bras d'assailant",
+                name: "Bras d'assailant",
                 vie: 6,
                 force: 5,
                 reflexes: 2,
@@ -305,7 +305,7 @@ function getItem(name, type) {
                 type: "triceps"
             },
             {
-                name: "épaule de visée",
+                name: "Épaule de visée",
                 vie: 2,
                 force: 0,
                 reflexes: 1,
@@ -314,7 +314,7 @@ function getItem(name, type) {
                 type: "épaule"
             },
             {
-                name: "épaule de pugiste",
+                name: "Épaule de purgiste",
                 vie: 0,
                 force: 5,
                 reflexes: 0,
@@ -329,7 +329,7 @@ function getItem(name, type) {
                 reflexes: 0,
                 tech: 0,
                 psy: 3,
-                type: "Dos"
+                type: "dos"
             },
             {
                 name: "Dos à impulsion",
@@ -338,7 +338,7 @@ function getItem(name, type) {
                 reflexes: 3,
                 tech: 1,
                 psy: 5,
-                type: "Dos"
+                type: "dos"
             },
             {
                 name: "Dos en titane",
@@ -347,9 +347,8 @@ function getItem(name, type) {
                 reflexes: 0,
                 tech: 0,
                 psy: 10,
-                type: "Dos"
+                type: "dos"
             },
-            
             {
                 name: "Colone de mobilité",
                 vie: 0,
@@ -357,7 +356,7 @@ function getItem(name, type) {
                 reflexes: 5,
                 tech: 0,
                 psy: 3,
-                type: "Colone"
+                type: "colone"
             },
             {
                 name: "Colone en titane",
@@ -366,7 +365,7 @@ function getItem(name, type) {
                 reflexes: 0,
                 tech: 0,
                 psy: 3,
-                type: "Colone"
+                type: "colone"
             },
             {
                 name: "Colone pyrotechnique",
@@ -375,7 +374,7 @@ function getItem(name, type) {
                 reflexes: 0,
                 tech: 5,
                 psy: 4,
-                type: "Colone"
+                type: "colone"
             },
             {
                 name: "Os en acier",
@@ -384,7 +383,7 @@ function getItem(name, type) {
                 reflexes: 0,
                 tech: 0,
                 psy: 3,
-                type: "Os"
+                type: "os"
             },
             {
                 name: "Os en titane",
@@ -393,7 +392,7 @@ function getItem(name, type) {
                 reflexes: -1,
                 tech: 0,
                 psy: 5,
-                type: "Os"
+                type: "os"
             },
             {
                 name: "Cou renforcé",
@@ -402,7 +401,7 @@ function getItem(name, type) {
                 reflexes: 0,
                 tech: 0,
                 psy: 1,
-                type: "Cou"
+                type: "cou"
             },
             {
                 name: "Cou flexible",
@@ -411,7 +410,7 @@ function getItem(name, type) {
                 reflexes: 3,
                 tech: 0,
                 psy: 2,
-                type: "Os"
+                type: "cou"
             },
             {
                 name: "Poitrail renforcé",
@@ -420,7 +419,7 @@ function getItem(name, type) {
                 reflexes: 0,
                 tech: 0,
                 psy: 5,
-                type: "Poitrine"
+                type: "poitrine"
             },
             {
                 name: "Poitrail canon",
@@ -429,7 +428,7 @@ function getItem(name, type) {
                 reflexes: 0,
                 tech: 10,
                 psy: 8,
-                type: "Poitrine"
+                type: "poitrine"
             },
             {
                 name: "Poitrail de vitesse",
@@ -438,7 +437,7 @@ function getItem(name, type) {
                 reflexes: 5,
                 tech: 0,
                 psy: 4,
-                type: "Poitrine"
+                type: "poitrine"
             },
             {
                 name: "Jambe de combat",
@@ -447,7 +446,7 @@ function getItem(name, type) {
                 reflexes: 0,
                 tech: 0,
                 psy: 3,
-                type: "Jambe"
+                type: "jambe"
             },
             {
                 name: "Jambe de renforcé",
@@ -456,7 +455,7 @@ function getItem(name, type) {
                 reflexes: 0,
                 tech: 0,
                 psy: 3,
-                type: "Jambe"
+                type: "jambe"
             },
             {
                 name: "Jambe de tireur",
@@ -465,9 +464,8 @@ function getItem(name, type) {
                 reflexes: 3,
                 tech: 5,
                 psy: 5,
-                type: "Jambe"
+                type: "jambe"
             },
-            
             {
                 name: "Yeux bioniques",
                 vie: 0,
@@ -475,22 +473,19 @@ function getItem(name, type) {
                 reflexes: 15,
                 tech: 0,
                 psy: 8,
-                type: "Yeux"
+                type: "yeux"
             },
-            
             {
-                name: "Yeux  de fauxcon",
+                name: "Yeux de fauxcon",
                 vie: 0,
                 force: 0,
                 reflexes: 25,
                 tech: 0,
                 psy: 12,
-                type: "Yeux"
+                type: "yeux"
             },
-            
-            
             {
-                name: "oreille sonar",
+                name: "Oreille sonar",
                 vie: 0,
                 force: 0,
                 reflexes: 15,
@@ -499,7 +494,7 @@ function getItem(name, type) {
                 type: "oreille"
             },
             {
-                name: "oreille de grub",
+                name: "Oreille de grub",
                 vie: 0,
                 force: 0,
                 reflexes: 25,
@@ -508,7 +503,7 @@ function getItem(name, type) {
                 type: "oreille"
             },
             {
-                name: "neurone artificiel",
+                name: "Neurone artificiel",
                 vie: 0,
                 force: 0,
                 reflexes: 15,
@@ -517,16 +512,14 @@ function getItem(name, type) {
                 type: "neurone"
             },
             {
-                name: "neurone de reflexion",
+                name: "Neurone de reflexion",
                 vie: 0,
                 force: 0,
                 reflexes: 5,
                 tech: 0,
                 psy: -5,
                 type: "neurone"
-            },
-        
-            
+            },  
         ],
         [
             {
@@ -556,7 +549,7 @@ function getItem(name, type) {
         ],
         [
             {
-                name: "avant bras blue Fire Mark II",
+                name: "Avant bras blue Fire Mark II",
                 vie: 7,
                 force: 0,
                 reflexes: 0,
@@ -565,25 +558,25 @@ function getItem(name, type) {
                 type: "avant-bras"
             },
             {
-                name: "colone Sandevistan Mark III",
+                name: "Colone Sandevistan Mark III",
                 vie: 5,
                 force: 0,
                 reflexes: 20,
                 tech: 2,
                 psy: 15,
-                type: "Colone"
+                type: "colone"
             },
             {
-                name: "poitrail de cosmonaut noir V1",
+                name: "Poitrail de cosmonaut noir V1",
                 vie: 10,
                 force: 5,
                 reflexes: 5,
                 tech: 0,
                 psy: 9,
-                type: "Poitrine"
+                type: "poitrine"
             },
             {
-                name: "neurone de Méga Corporation Antalis V2",
+                name: "Neurone de Méga Corporation Antalis V2",
                 vie: 0,
                 force: 5,
                 reflexes: 40,
@@ -592,7 +585,7 @@ function getItem(name, type) {
                 type: "neurone"
             },
             {
-                name: "neurone de John Cena artificiel",
+                name: "Neurone de John Cena artificiel",
                 vie: 0,
                 force: 0,
                 reflexes: 10,
