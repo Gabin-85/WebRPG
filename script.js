@@ -449,7 +449,7 @@ function getItem(name, type) {
                 type: "jambe"
             },
             {
-                name: "Jambe de renforcé",
+                name: "Jambe renforcé",
                 vie: 5,
                 force: 0,
                 reflexes: 0,
@@ -476,7 +476,7 @@ function getItem(name, type) {
                 type: "yeux"
             },
             {
-                name: "Yeux de fauxcon",
+                name: "Yeux de faucons",
                 vie: 0,
                 force: 0,
                 reflexes: 25,
@@ -523,7 +523,7 @@ function getItem(name, type) {
         ],
         [
             {
-                name: "Médoc anti dépression",
+                name: "Médoc anti-dépression",
                 vie: 0,
                 force: 0,
                 reflexes: 0,
