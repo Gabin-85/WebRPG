@@ -128,7 +128,9 @@ function createEnemy(name, hp, force) {
 
 // createEnemy("John Cena", 150, 7)
 // createEnemy("Yakuza", 50, 1)
+// createEnemy("Yakuza supérieur", 80, 1)
 // createEnemy("Gardes", 50, 1)
+// createEnemy("Gardes renforcer", 9999, -3) :)
 // createEnemy("Gorilles", 50, 3)
 // createEnemy("Cadres", 60, 3)
 // createEnemy("Cyber Psycho", 80, 4)
