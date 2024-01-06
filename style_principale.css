@@ -1,6 +1,6 @@
 body {
     height: 100%;
-    overflow-y: auto;
+    overflow-y: hidden;
     justify-content:  center;
 }
 #div_message{ 
@@ -143,7 +143,6 @@ button:hover {
     transition: 0.5s;
 }
 .state{
-    text-align: end;
     opacity: 0;
     width: fit-content;
     height: fit-content;
@@ -178,4 +177,11 @@ button:hover {
     position: fixed;
     right: 20px;
     top: 20px;
+}
+#img_enem{
+    height: 400px;
+    position: fixed;
+    right: 50px;
+    top: 70px;
+    transition: 0.3s;
 }

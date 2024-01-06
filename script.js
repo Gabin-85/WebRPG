@@ -13,29 +13,30 @@ function combat() {
     enemy = enemy.split(",")
     enemyName = enemy[0]
     enemyHp = enemy[1]
+    localStorage.setItem("hp",localStorage.getItem("maxHp"))
     hp = localStorage.getItem("hp")
     div = document.getElementById('combat')     // Ce qui suis est l'html de la page de combat
     div.innerHTML = `
 
     <div class=pve>
     <strong>[${enemyHp} ♥] ${enemyName}</strong>
-        <div class=state><strong>            ${enemyName}</strong><br>
+        <div class=state><strong>             ${enemyName}</strong><br>
         <p>
-            Vie : ${enemyHp} <br>
-            Force : ${parseInt(enemy[2])}
+                      Vie : ${enemyHp} <br>
+                      Force : ${parseInt(enemy[2])}
         </p></div>
     </div>
 
     <div class=pvm>
     <strong> ${localStorage.getItem("pseudo")} [${hp} ♥] </strong>
         <div class=statm><strong>${localStorage.getItem("pseudo")}             </strong><br><p>
-         Vie : ${hp}/${localStorage.getItem("maxHp")} <br>
-         Force : ${localStorage.getItem("force")} <br>
-         Tech : ${localStorage.getItem("tech")} <br>
-         Reflexes : ${localStorage.getItem("reflexes")} 
+           Vie : ${hp}/${localStorage.getItem("maxHp")} <br>
+           Force : ${localStorage.getItem("force")} <br>
+           Tech : ${localStorage.getItem("tech")} <br>
+           Reflexes : ${localStorage.getItem("reflexes")} 
         </p></div>
-    </div>
 
+    </div>
     <div class="fbut">
     <button id='distance' onclick='action("distance")'>Attaque de distance</button>
     <button id='cac' onclick='action("cac")'>Attaque de corps à corps</button>
