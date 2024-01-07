@@ -112,6 +112,7 @@ function death(deathMessage) {
 function init() {
     pseudo = document.getElementById("input_pseudo").value
     localStorage.clear()
+    localStorage.setItem("arme","Poing")
     localStorage.setItem("pseudo", pseudo)
     localStorage.setItem("force", "5")
     localStorage.setItem("hp", "5")
@@ -218,20 +219,20 @@ function lootItem(type, name) {
     } else {
         let item = getItem(type)
         if (type == 0) {
-            let arme_to_replace = localStorage.getItem("arme")
+            let arme_to_replace = getItem(0, localStorage.getItem("arme"))
             if (arme_to_replace) {
-                if (confirm("Voulez vous remplacer l'arme : " + arme_to_replace)) {
+                if (confirm("Voulez vous remplacer votre [" + arme_to_replace.name + "] par l'arme [" + item.name + "]")) {
                     localStorage.setItem("arme", item.name)
                     vie = parseInt(localStorage.getItem("vie"))
-                    localStorage.setItem("vie", vie - item.vie)
+                    localStorage.setItem("vie", vie - arme_to_replace.vie + item.vie)
                     force = parseInt(localStorage.getItem("force"))
-                    localStorage.setItem("force", force - item.force)
+                    localStorage.setItem("force", force - arme_to_replace.force + item.force)
                     reflexes = parseInt(localStorage.getItem("reflexes"))
-                    localStorage.setItem("reflexes", reflexes - item.reflexes)
+                    localStorage.setItem("reflexes", reflexes - arme_to_replace.reflexes + item.reflexes)
                     tech = parseInt(localStorage.getItem("tech"))
-                    localStorage.setItem("tech", tech - item.tech)
+                    localStorage.setItem("tech", tech - arme_to_replace.tech + item.tech)
                     psy = parseInt(localStorage.getItem("psy"))
-                    localStorage.setItem("psy", psy - item.psy)
+                    localStorage.setItem("psy", psy - arme_to_replace.psy + item.psy)
                     return true
                 } else {
                     alert("opération annulée.")
@@ -297,6 +298,14 @@ function lootItem(type, name) {
 function getItem(type, name) {
     items = [
         [
+            {
+                name: "Poing",
+                vie: 0,
+                force: 0,
+                reflexes: 0,
+                tech: 0,
+                psy: 0
+            },
             {
                 name: "Katana",
                 vie: 0,
