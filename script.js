@@ -73,7 +73,12 @@ function action(action) {
         hp = maxHp
         document.getElementById("combat").style.display = "none"
         document.getElementById("victory").style.display = "block"
-        lootItem(0)
+        if (Math.floor(Math.random() * 3) + 1 == 1) {
+           lootItem(0) 
+        } else {
+            lootItem(1)
+        }
+        
         return
     } else {
         enemyAttack()
@@ -219,20 +224,20 @@ function lootItem(type, name) {
     } else {
         let item = getItem(type)
         if (type == 0) {
-            let arme_to_replace = getItem(0, localStorage.getItem("arme"))
-            if (arme_to_replace) {
-                if (confirm("Voulez vous remplacer votre [" + arme_to_replace.name + "] par l'arme [" + item.name + "]")) {
+            let item_to_replace = getItem(0, localStorage.getItem("arme"))
+            if (item_to_replace) {
+                if (confirm("Voulez vous remplacer votre [" + item_to_replace.name + "] par l'arme [" + item.name + "]")) {
                     localStorage.setItem("arme", item.name)
                     vie = parseInt(localStorage.getItem("vie"))
-                    localStorage.setItem("vie", vie - arme_to_replace.vie + item.vie)
+                    localStorage.setItem("vie", vie - item_to_replace.vie + item.vie)
                     force = parseInt(localStorage.getItem("force"))
-                    localStorage.setItem("force", force - arme_to_replace.force + item.force)
+                    localStorage.setItem("force", force - item_to_replace.force + item.force)
                     reflexes = parseInt(localStorage.getItem("reflexes"))
-                    localStorage.setItem("reflexes", reflexes - arme_to_replace.reflexes + item.reflexes)
+                    localStorage.setItem("reflexes", reflexes - item_to_replace.reflexes + item.reflexes)
                     tech = parseInt(localStorage.getItem("tech"))
-                    localStorage.setItem("tech", tech - arme_to_replace.tech + item.tech)
+                    localStorage.setItem("tech", tech - item_to_replace.tech + item.tech)
                     psy = parseInt(localStorage.getItem("psy"))
-                    localStorage.setItem("psy", psy - arme_to_replace.psy + item.psy)
+                    localStorage.setItem("psy", psy - item_to_replace.psy + item.psy)
                     return true
                 } else {
                     alert("opération annulée.")
@@ -255,7 +260,7 @@ function lootItem(type, name) {
         } else if (type == 1) {
             let implant_type = item.type
             if (localStorage.getItem(implant_type)) {
-                if (confirm("Voulez vous remplacer l'implant : " + localStorage.getItem(implant_type))) {
+                if (confirm("Voulez vous remplacer [" + localStorage.getItem(implant_type) + "] par l'implant [" + item.name + "]")) {
                     let item_to_replace = getItem(localStorage.getItem(implant_type), type)
                     localStorage.setItem(implant_type, item.name)
                     vie = parseInt(localStorage.getItem("vie"))
