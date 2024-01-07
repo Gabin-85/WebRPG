@@ -70,7 +70,6 @@ function action(action) {
         localStorage.setItem("dodgeRate", Math.round(Math.random() * 100)+reflexes)
     }
     if (enemyHp <= 0) {
-        hp = maxHp
         document.getElementById("combat").style.display = "none"
         document.getElementById("victory").style.display = "block"
         if (Math.floor(Math.random() * 3) + 1 == 1) {
@@ -155,6 +154,10 @@ function hub(opt) {
         } else {
             locat2.innerHTML = `<a href="Mission Yakuzas2/mission.html"><img src="Images and scripts/Yakuzas.png" alt="Base de yakuzas"></a><h3>Aller à la base des yakuzas</h3>`
         }
+        locat3 = document.getElementById("locat3")
+        if (localStorage.getItem("yakuza") == "true" || localStorage.getItem("space") == "true"){
+            locat3.innerHTML = `<a href="Mission Labo MC/mission.html"><img src="Images and scripts/labo.png" alt="Laboratoire d'Antalis"></a><h3>Aller au laboratoire</h3>`
+        }
     }
 }
 function hubTeam(opt) {
@@ -175,6 +178,10 @@ function hubTeam(opt) {
         } else {
             locat2.innerHTML = `<a href="Mission Mégacorporation avec la team/mission.html"><img src="Images and scripts/Antalis.png" alt="Megacorporation"></a><h3>Aller à la mégacorporation</h3>`
         }
+        locat3 = document.getElementById("locat3")
+        if (localStorage.getItem("vol") == "true"|| localStorage.getItem("mc") == "true"){
+            locat3.innerHTML = `<a href="Mission cyber psycho/prémission.html"><img src="Images and scripts/party.png" alt="Faire la fête"></a><h3>Aller à la fête</h3>`
+        }
     }
 }
 
@@ -192,8 +199,8 @@ function lootItem(type, name) {
             if (confirm("Voulez vous remplacer l'implant : " + localStorage.getItem(implant_type))) {
                 let item_to_replace = getItem(localStorage.getItem(implant_type), type)
                 localStorage.setItem(implant_type, name)
-                vie = parseInt(localStorage.getItem("vie"))
-                localStorage.setItem("vie", vie - item_to_replace.vie + item.vie)
+                maxHp = parseInt(localStorage.getItem("maxHp"))
+                localStorage.setItem("maxHp", maxHp - item_to_replace.vie + item.vie)
                 force = parseInt(localStorage.getItem("force"))
                 localStorage.setItem("force", force - item_to_replace.force + item.force)
                 reflexes = parseInt(localStorage.getItem("reflexes"))
@@ -209,8 +216,8 @@ function lootItem(type, name) {
             }
         } else {
             localStorage.setItem(implant_type, name)
-            vie = parseInt(localStorage.getItem("vie"))
-            localStorage.setItem("vie", vie + item.vie)
+            maxHp = parseInt(localStorage.getItem("maxHp"))
+            localStorage.setItem("maxHp", maxHp + item.vie)
             force = parseInt(localStorage.getItem("force"))
             localStorage.setItem("force", force + item.force)
             reflexes = parseInt(localStorage.getItem("reflexes"))
@@ -228,8 +235,8 @@ function lootItem(type, name) {
             if (item_to_replace) {
                 if (confirm("Voulez vous remplacer votre [" + item_to_replace.name + "] par l'arme [" + item.name + "]")) {
                     localStorage.setItem("arme", item.name)
-                    vie = parseInt(localStorage.getItem("vie"))
-                    localStorage.setItem("vie", vie - item_to_replace.vie + item.vie)
+                    maxHp = parseInt(localStorage.getItem("maxHp"))
+                    localStorage.setItem("maxHp", maxHp - item_to_replace.vie + item.vie)
                     force = parseInt(localStorage.getItem("force"))
                     localStorage.setItem("force", force - item_to_replace.force + item.force)
                     reflexes = parseInt(localStorage.getItem("reflexes"))
@@ -245,8 +252,8 @@ function lootItem(type, name) {
                 }
             } else {
                 localStorage.setItem("arme", item.name)
-                vie = parseInt(localStorage.getItem("vie"))
-                localStorage.setItem("vie", vie + item.vie)
+                maxHp = parseInt(localStorage.getItem("maxHp"))
+                localStorage.setItem("maxHp", maxHp + item.vie)
                 force = parseInt(localStorage.getItem("force"))
                 localStorage.setItem("force", force + item.force)
                 reflexes = parseInt(localStorage.getItem("reflexes"))
@@ -263,8 +270,8 @@ function lootItem(type, name) {
                 if (confirm("Voulez vous remplacer [" + localStorage.getItem(implant_type) + "] par l'implant [" + item.name + "]")) {
                     let item_to_replace = getItem(localStorage.getItem(implant_type), type)
                     localStorage.setItem(implant_type, item.name)
-                    vie = parseInt(localStorage.getItem("vie"))
-                    localStorage.setItem("vie", vie - item_to_replace.vie + item.vie)
+                    maxHp = parseInt(localStorage.getItem("maxHp"))
+                    localStorage.setItem("maxHp", maxHp - item_to_replace.vie + item.vie)
                     force = parseInt(localStorage.getItem("force"))
                     localStorage.setItem("force", force - item_to_replace.force + item.force)
                     reflexes = parseInt(localStorage.getItem("reflexes"))
@@ -280,8 +287,8 @@ function lootItem(type, name) {
                 }
             } else {
                 localStorage.setItem(implant_type, item.name)
-                vie = parseInt(localStorage.getItem("vie"))
-                localStorage.setItem("vie", vie + item.vie)
+                maxHp = parseInt(localStorage.getItem("maxHp"))
+                localStorage.setItem("maxHp", maxHp + item.vie)
                 force = parseInt(localStorage.getItem("force"))
                 localStorage.setItem("force", force + item.force)
                 reflexes = parseInt(localStorage.getItem("reflexes"))
@@ -294,7 +301,7 @@ function lootItem(type, name) {
             }
         } else if (type == 2) {
             alert("Médicament consommé !")
-            vie = parseInt(localStorage.getItem("psy"))
+            vie = maxHp
             localStorage.setItem("psy", psy + item.psy)
             return true
         }

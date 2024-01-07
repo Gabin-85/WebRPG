@@ -57,3 +57,10 @@ button:hover {
     margin-left: 12%;
     width:fit-content;
 }
+/* message --> (cliquer pour continuer) */
+#clickadvice{
+    color: #ffffff;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
