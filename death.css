@@ -3,7 +3,8 @@ body {
   overflow-y: hidden;
 }
 #div_death_message {
-  width: 400px;
+    width: fit-content;
+    padding: 0px 20px 0px 20px;
     background-color: #161414;
     margin: 20% auto;
     border: 5px outset #585858;

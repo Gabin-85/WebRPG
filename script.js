@@ -13,7 +13,6 @@ function combat() {
     enemy = enemy.split(",")
     enemyName = enemy[0]
     enemyHp = enemy[1]
-    localStorage.setItem("hp",localStorage.getItem("maxHp"))
     hp = localStorage.getItem("hp")
     div = document.getElementById('combat')     // Ce qui suis est l'html de la page de combat
     div.innerHTML = `
@@ -124,6 +123,7 @@ function init() {
 
 function createEnemy(name, hp, force) {
     localStorage.setItem("enemy", name + "," + hp + "," + force)
+    localStorage.setItem("hp",localStorage.getItem("maxHp"))
 }
 
 // createEnemy("John Cena", 150, 7)
