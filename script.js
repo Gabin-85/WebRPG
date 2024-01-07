@@ -73,6 +73,7 @@ function action(action) {
         hp = maxHp
         document.getElementById("combat").style.display = "none"
         document.getElementById("victory").style.display = "block"
+        lootItem(0)
         return
     } else {
         enemyAttack()
@@ -110,6 +111,7 @@ function death(deathMessage) {
 
 function init() {
     pseudo = document.getElementById("input_pseudo").value
+    localStorage.clear()
     localStorage.setItem("pseudo", pseudo)
     localStorage.setItem("force", "5")
     localStorage.setItem("hp", "5")
@@ -295,14 +297,6 @@ function lootItem(type, name) {
 function getItem(type, name) {
     items = [
         [
-            {
-                name: "none",
-                vie: 0,
-                force: 0,
-                reflexes: 0,
-                tech: 0,
-                psy: 0
-            },
             {
                 name: "Katana",
                 vie: 0,
