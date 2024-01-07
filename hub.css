@@ -1,0 +1,44 @@
+body{
+    color: #ffffff ;
+}
+h3{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-shadow: rgb(255, 255, 255) 3px 0 10px;
+}
+#phrase{
+    font-size: 100%;
+    color: #ffffff;
+    background-color: rgba(100, 100, 100, 0.3); 
+    width: fit-content;
+    padding: 0px 20px 0px 20px;
+    border: 5px outset black;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    margin: 0 auto;
+}
+#locat1{
+    position: fixed;
+    right: 300px;
+    top: 100px;
+    margin: 0 auto;
+}
+#locat2{
+    position: fixed;
+    left: 280px;
+    top: 120px;
+    margin: 0 auto;
+}
+#locat3{
+    position: fixed;
+    right: 500px;
+    bottom: 80px;
+    margin: 0 auto;
+}
+img{
+    width: 200px;
+}

@@ -118,6 +118,10 @@ function init() {
     localStorage.setItem("tech", "5")
     localStorage.setItem("psy", "5")
     localStorage.setItem("deathMessage", "")
+    localStorage.setItem("vol","false")
+    localStorage.setItem("yakuza","false")
+    localStorage.setItem("mc","false")
+    localStorage.setItem("space","false")
     window.location = 'Mission Yakuzas/mission.html' // envoie sur le début de la mission yakuzas
 }
 
@@ -125,20 +129,170 @@ function createEnemy(name, hp, force) {
     localStorage.setItem("enemy", name + "," + hp + "," + force)
     localStorage.setItem("hp",localStorage.getItem("maxHp"))
 }
+function hub(opt) {
+    if (opt == "space") {
+        localStorage.setItem("space","true")
+    } else if (opt == "yakuza") {
+        localStorage.setItem("yakuza","true")
+    } else if (opt == "show") {
+        locat1 = document.getElementById('locat1')
+        if (localStorage.getItem("space") == "true") {
+            locat1.innerHTML = `<img src="Images and scripts/Base_spatial_fire.png" alt="Base spatial">`
+        } else {
+            locat1.innerHTML = `<a href="Mission Base Spatiale/mission.html"><img src="Images and scripts/Base_spatial.png" alt="Base spatial"></a><h3>Aller à la base spatial</h3>`
+        }
+        locat2 = document.getElementById('locat2')
+        if (localStorage.getItem("yakuza") == "true") {
+            locat2.innerHTML = `<img src="Images and scripts/kill.png" alt="Base de yakuzas">`
+        } else {
+            locat2.innerHTML = `<a href="Mission Yakuzas2/mission.html"><img src="Images and scripts/Yakuzas.png" alt="Base de yakuzas"></a><h3>Aller à la base des yakuzas</h3>`
+        }
+    }
+}
+function hubTeam(opt) {
+    if (opt == "mc") {
+        localStorage.setItem("mc","true")
+    } else if (opt == "vol") {
+        localStorage.setItem("vol","true")
+    } else if (opt == "show") {
+        locat1 = document.getElementById('locat1')
+        if (localStorage.getItem("vol") == "true") {
+            locat1.innerHTML = `<img src="Images and scripts/voler.png" alt="Vol de voiture">`
+        } else {
+            locat1.innerHTML = `<a href="Mission vol de voiture/mission.html"><img src="Images and scripts/vol.png" alt="Vol de voiture"></a><h3>Vol de voiture</h3>`
+        }
+        locat2 = document.getElementById('locat2')
+        if (localStorage.getItem("mc") == "true") {
+            locat2.innerHTML = `<img src="Images and scripts/Antalis_boom.png" alt="Megacorporation">`
+        } else {
+            locat2.innerHTML = `<a href="Mission Mégacorporation avec la team/mission.html"><img src="Images and scripts/Antalis.png" alt="Megacorporation"></a><h3>Aller à la mégacorporation</h3>`
+        }
+    }
+}
 
-// createEnemy("John Cena", 150, 7)
-// createEnemy("Yakuza", 50, 1)
-// createEnemy("Yakuza supérieur", 80, 1)
-// createEnemy("Gardes", 50, 1)
-// createEnemy("Gardes renforcer", 9999, -3) :)
-// createEnemy("Gorilles", 50, 3)
-// createEnemy("Cadres", 60, 3)
-// createEnemy("Cyber Psycho", 80, 4)
-// createEnemy("Nikolaï", 65, 6)
-// createEnemy("Melon Musk", 130, 6)
-// createEnemy("Rick Astley", 225, 11)
-
-function getItem(name, type) {
+function lootItem(type, name) {
+    /**
+     * Loot un objet
+     * @param  {Int16Array} type  0 pour armes, 1 pour implants, 2 pour médicaments, 3 pour objets spéciaux
+     * @param  {string} name  Nom de l'objet
+     * @return {boolean} si l'objet est équipé ou non
+     */
+    if (name) {
+        let item = getItem(type, name)
+        let implant_type = item.type
+        if (localStorage.getItem(implant_type)) {
+            if (confirm("Voulez vous remplacer l'implant : " + localStorage.getItem(implant_type))) {
+                let item_to_replace = getItem(localStorage.getItem(implant_type), type)
+                localStorage.setItem(implant_type, name)
+                vie = parseInt(localStorage.getItem("vie"))
+                localStorage.setItem("vie", vie - item_to_replace.vie + item.vie)
+                force = parseInt(localStorage.getItem("force"))
+                localStorage.setItem("force", force - item_to_replace.force + item.force)
+                reflexes = parseInt(localStorage.getItem("reflexes"))
+                localStorage.setItem("reflexes", reflexes - item_to_replace.reflexes + item.reflexes)
+                tech = parseInt(localStorage.getItem("tech"))
+                localStorage.setItem("tech", tech - item_to_replace.tech + item.tech)
+                psy = parseInt(localStorage.getItem("psy"))
+                localStorage.setItem("psy", psy - item_to_replace.psy + item.psy)
+                return true
+            } else {
+                alert("opération annulée.")
+                return false
+            }
+        } else {
+            localStorage.setItem(implant_type, name)
+            vie = parseInt(localStorage.getItem("vie"))
+            localStorage.setItem("vie", vie + item.vie)
+            force = parseInt(localStorage.getItem("force"))
+            localStorage.setItem("force", force + item.force)
+            reflexes = parseInt(localStorage.getItem("reflexes"))
+            localStorage.setItem("reflexes", reflexes + item.reflexes)
+            tech = parseInt(localStorage.getItem("tech"))
+            localStorage.setItem("tech", tech + item.tech)
+            psy = parseInt(localStorage.getItem("psy"))
+            localStorage.setItem("psy", psy + item.psy)
+            return true
+        }
+    } else {
+        let item = getItem(type)
+        if (type == 0) {
+            let arme_to_replace = localStorage.getItem("arme")
+            if (arme_to_replace) {
+                if (confirm("Voulez vous remplacer l'arme : " + arme_to_replace)) {
+                    localStorage.setItem("arme", item.name)
+                    vie = parseInt(localStorage.getItem("vie"))
+                    localStorage.setItem("vie", vie - item.vie)
+                    force = parseInt(localStorage.getItem("force"))
+                    localStorage.setItem("force", force - item.force)
+                    reflexes = parseInt(localStorage.getItem("reflexes"))
+                    localStorage.setItem("reflexes", reflexes - item.reflexes)
+                    tech = parseInt(localStorage.getItem("tech"))
+                    localStorage.setItem("tech", tech - item.tech)
+                    psy = parseInt(localStorage.getItem("psy"))
+                    localStorage.setItem("psy", psy - item.psy)
+                    return true
+                } else {
+                    alert("opération annulée.")
+                    return false
+                }
+            } else {
+                localStorage.setItem("arme", item.name)
+                vie = parseInt(localStorage.getItem("vie"))
+                localStorage.setItem("vie", vie + item.vie)
+                force = parseInt(localStorage.getItem("force"))
+                localStorage.setItem("force", force + item.force)
+                reflexes = parseInt(localStorage.getItem("reflexes"))
+                localStorage.setItem("reflexes", reflexes + item.reflexes)
+                tech = parseInt(localStorage.getItem("tech"))
+                localStorage.setItem("tech", tech + item.tech)
+                psy = parseInt(localStorage.getItem("psy"))
+                localStorage.setItem("psy", psy + item.psy)
+                return true
+            }
+        } else if (type == 1) {
+            let implant_type = item.type
+            if (localStorage.getItem(implant_type)) {
+                if (confirm("Voulez vous remplacer l'implant : " + localStorage.getItem(implant_type))) {
+                    let item_to_replace = getItem(localStorage.getItem(implant_type), type)
+                    localStorage.setItem(implant_type, item.name)
+                    vie = parseInt(localStorage.getItem("vie"))
+                    localStorage.setItem("vie", vie - item_to_replace.vie + item.vie)
+                    force = parseInt(localStorage.getItem("force"))
+                    localStorage.setItem("force", force - item_to_replace.force + item.force)
+                    reflexes = parseInt(localStorage.getItem("reflexes"))
+                    localStorage.setItem("reflexes", reflexes - item_to_replace.reflexes + item.reflexes)
+                    tech = parseInt(localStorage.getItem("tech"))
+                    localStorage.setItem("tech", tech - item_to_replace.tech + item.tech)
+                    psy = parseInt(localStorage.getItem("psy"))
+                    localStorage.setItem("psy", psy - item_to_replace.psy + item.psy)
+                    return true
+                } else {
+                    alert("opération annulée.")
+                    return false
+                }
+            } else {
+                localStorage.setItem(implant_type, item.name)
+                vie = parseInt(localStorage.getItem("vie"))
+                localStorage.setItem("vie", vie + item.vie)
+                force = parseInt(localStorage.getItem("force"))
+                localStorage.setItem("force", force + item.force)
+                reflexes = parseInt(localStorage.getItem("reflexes"))
+                localStorage.setItem("reflexes", reflexes + item.reflexes)
+                tech = parseInt(localStorage.getItem("tech"))
+                localStorage.setItem("tech", tech + item.tech)
+                psy = parseInt(localStorage.getItem("psy"))
+                localStorage.setItem("psy", psy + item.psy)
+                return true
+            }
+        } else if (type == 2) {
+            alert("Médicament consommé !")
+            vie = parseInt(localStorage.getItem("psy"))
+            localStorage.setItem("psy", psy + item.psy)
+            return true
+        }
+    }
+}
+function getItem(type, name) {
     items = [
         [
             {
@@ -595,9 +749,13 @@ function getItem(name, type) {
             },
         ]
     ]
-    for (let i = 0; i < items[type].length; i++) {
-        if (items[type][i].name == name) {
-            return items[type][i]
+    if (name) {for (let i = 0; i < items[type].length; i++) {
+            if (items[type][i].name == name) {
+                return items[type][i]
+            }
         }
+    } else {
+        var item = items[type][Math.floor(Math.random()*items[type].length)];
+        return item
     }
 }
