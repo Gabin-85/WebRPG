@@ -1,3 +1,4 @@
+/* options par défaut */
 body {
     color: #ffffff;
     background-size: cover;
@@ -5,6 +6,8 @@ body {
     overflow-y: hidden;
     justify-content:  center;
 }
+
+/* Mise en forme des message joueur */
 #div_message{ 
     font-size: 100%;
     color: #ffffff;
@@ -21,9 +24,29 @@ body {
     transform: translate(-50%, 0);
     margin: 0 auto;
 }
+#div_alert{
+    font-size: 120%;
+    color: #ffffff;   
+    width: fit-content;
+    padding: 0px 20px 0px 20px;
+    background-color: rgba(100, 100, 100, 0.8);
+    border: 5px outset rgb(0, 0, 0);
+    border-radius: 15px;
+    backdrop-filter: blur(0px);
+
+    position: fixed;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
+
+/* Fonction pour centrer un objet/text (utiliser pour les <p> et les <button> */
 #barray{
     text-align: center;
 }
+
+/* Forme couleur et annimation des boutons normaux */
 button{
     border-radius: 15px;
     height: 30px;
@@ -44,24 +67,8 @@ button:hover {
     border: 2px solid black;
     transition: 0.6s;
 }
-#div_alert{
-    font-size: 120%;
-    color: #ffffff;   
-    width: fit-content;
-    padding: 0px 20px 0px 20px;
-    background-color: rgba(100, 100, 100, 0.8);
-    border: 5px outset rgb(0, 0, 0);
-    border-radius: 15px;
-    backdrop-filter: blur(0px);
 
-    position: fixed;
-    left: 50%;
-    top:50%;
-    transform: translate(-50%, -50%);
-    margin: 0 auto;
-}
-
-/* Ceci est l'affichage lors d'un combat */
+/* Ceci est l'affichage des boutons lors d'un combat */
 .fbut{
     height: 50px;
     padding: 20px 20px 20px 20px;
@@ -89,6 +96,8 @@ button:hover {
     font-size: 120;
     transition: 0.3s;
 }
+
+/* Couleur et position des boutons de combat */
 #tech{
     position: fixed;
     right: 25px;
@@ -126,6 +135,8 @@ button:hover {
     bottom: 20px;
     transition: 0.6s;
 }
+
+/* Statistique des combatants (apparition et disparition */
 .statm{
     opacity: 0;
     width: fit-content;
@@ -161,6 +172,8 @@ button:hover {
     opacity: 1;
     transition: 0.5s;
 }
+
+/* Nom et vie des combatants */
 .pvm{
     border-radius: 10px;
     padding: 10px 20px 10px 20px;
@@ -179,13 +192,17 @@ button:hover {
     right: 20px;
     top: 20px;
 }
+
+/* Personnage allié et ennemi */
 #img_enem{
-    height: 400px;
+    height: 300px;
     position: fixed;
     right: 50px;
     top: 70px;
     transition: 0.3s;
 }
+
+/* message --> (cliquer pour continuer) */
 #clickadvice{
     color: #ffffff;
     position: fixed;

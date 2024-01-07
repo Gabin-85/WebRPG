@@ -1,12 +1,13 @@
 # WebRPG
 
-Petit RPG web sur le thème futuristique
+Petit RPG web sur le thème futuristique, cyberpunk, sci-fi ...
 
 Tableau de Trello :
     https://trello.com/b/QotHQqWw/rpg-sur-site-web
 
 Roue des couleur :
     https://color.adobe.com/
+
 
 ## Comment créer une bataille ?
 

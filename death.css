@@ -1,7 +1,10 @@
+/* Paramêtres par défaut */
 body {
   height: 100%;
   overflow-y: hidden;
 }
+
+/* Message au centre */
 #div_death_message {
     width: fit-content;
     padding: 0px 20px 0px 20px;
@@ -10,6 +13,8 @@ body {
     border: 5px outset #585858;
     border-radius: 20px;
 }
+
+/* Pramêtrage du texte */
 h1{
     text-align: center;
     color: red;
@@ -22,14 +27,14 @@ h3{
     font-size: 20px;
     text-shadow: 2px 2px 1px #ff0000;
 }
-/* tremblement du message */
+
+/* Tremblement du message */
 .death:hover {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
 }
-
 @keyframes shake {
   10%, 90% {
     transform: translate3d(-1px, 0, 0);

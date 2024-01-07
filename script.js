@@ -1,6 +1,7 @@
 // Système de combat fait par Soullard Syméon  --[Syméon]
 // Système d'objet fait par Luan  --[Luan]
 //Je confirme  --[Gabin]
+
 hp = localStorage.getItem("hp")
 if (hp == null) {
     window.location = 'index.html'
@@ -16,7 +17,6 @@ function combat() {
     hp = localStorage.getItem("hp")
     div = document.getElementById('combat')     // Ce qui suis est l'html de la page de combat
     div.innerHTML = `
-
     <div class=pve>
     <strong>[${enemyHp} ♥] ${enemyName}</strong>
         <div class=state><strong>             ${enemyName}</strong><br>
