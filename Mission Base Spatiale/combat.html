@@ -7,12 +7,12 @@
   <title>Antalis Revenger !</title>
   <link rel="stylesheet" href="../style_principale.css">
 </head>
-<body onload="createEnemy('guarde bizzarement équipé', 40, 4); combat();">
+<body onload="createEnemy('Guarde bizzarement équipé', 40, 4); combat();">
   <div id="combat"></div>
   <div id="victory" style="display: none;">
     <div id="div_message">
     <p>Vous avez gagné ! Vous décidez d'aller vers la base.</p>
-    <div id="barray"><a href="base.html"><button>Continuer</button></a></div>
+    <div id="barray"><button onclick="lootItem('3','Poitrail de cosmonaut noir V1')">Analyser équipement bizzard</button><button onclick="window.location='base.html'">Continuer</button></div>
     </div>
   </div>
 </body>

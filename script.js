@@ -32,7 +32,8 @@ function combat() {
            Vie : ${hp}/${localStorage.getItem("maxHp")} <br>
            Force : ${localStorage.getItem("force")} <br>
            Tech : ${localStorage.getItem("tech")} <br>
-           Reflexes : ${localStorage.getItem("reflexes")} 
+           Reflexes : ${localStorage.getItem("reflexes")} <br>
+           Psy : ${100-localStorage.getItem("psy")}/100
         </p></div>
 
     </div>
@@ -57,7 +58,7 @@ function action(action) {
         enemyHp = enemyHp - force
         localStorage.setItem("enemy", enemyName + "," + enemyHp + "," + enemyForce)
         localStorage.setItem("dodgeRate", (80-reflexes)/80)
-        if (localStorage.getItem("dodgeRate") > 1) {
+        if (localStorage.getItem("dodgeRate") < 0) {
             localStorage.setItem("dodgeRate",1)
         }
     }
@@ -66,7 +67,7 @@ function action(action) {
         enemyHp = enemyHp - damage
         localStorage.setItem("enemy", enemyName + "," + enemyHp + "," + enemyForce)
         localStorage.setItem("dodgeRate", (50-reflexes)/50)
-        if (localStorage.getItem("dodgeRate") > 1) {
+        if (localStorage.getItem("dodgeRate") < 0) {
             localStorage.setItem("dodgeRate",1)
         }
     }
@@ -74,11 +75,12 @@ function action(action) {
         enemyHp = enemyHp - tech
         localStorage.setItem("enemy", enemyName + "," + enemyHp + "," + enemyForce)
         localStorage.setItem("dodgeRate", (80-reflexes)/80)
-        if (localStorage.getItem("dodgeRate") > 1) {
+        if (localStorage.getItem("dodgeRate") < 0) {
             localStorage.setItem("dodgeRate",1)
         }
     }
     if (enemyHp <= 0) {
+        checkPsychose()
         document.getElementById("combat").style.display = "none"
         document.getElementById("victory").style.display = "block"
         if (Math.floor(Math.random() * 3) + 1 == 1) {
@@ -205,7 +207,7 @@ function lootItem(type, name) {
         let item = getItem(type, name)
         let implant_type = item.type
         if (localStorage.getItem(implant_type)) {
-            if (confirm("Voulez vous remplacer l'implant : " + localStorage.getItem(implant_type))) {
+            if (confirm("Voulez vous remplacer [" + localStorage.getItem(implant_type) + "] par l'implant [" + name + "]")) {
                 let item_to_replace = getItem(localStorage.getItem(implant_type), type)
                 localStorage.setItem(implant_type, name)
                 maxHp = parseInt(localStorage.getItem("maxHp"))
