@@ -59,7 +59,7 @@ function action(action) {
         localStorage.setItem("enemy", enemyName + "," + enemyHp + "," + enemyForce)
         localStorage.setItem("dodgeRate", (80-reflexes)/80)
         if (localStorage.getItem("dodgeRate") < 0) {
-            localStorage.setItem("dodgeRate",1)
+            localStorage.setItem("dodgeRate",0)
         }
     }
     if (action == "distance") {
@@ -68,7 +68,7 @@ function action(action) {
         localStorage.setItem("enemy", enemyName + "," + enemyHp + "," + enemyForce)
         localStorage.setItem("dodgeRate", (50-reflexes)/50)
         if (localStorage.getItem("dodgeRate") < 0) {
-            localStorage.setItem("dodgeRate",1)
+            localStorage.setItem("dodgeRate",0)
         }
     }
     if (action == "tech") {
@@ -76,7 +76,7 @@ function action(action) {
         localStorage.setItem("enemy", enemyName + "," + enemyHp + "," + enemyForce)
         localStorage.setItem("dodgeRate", (80-reflexes)/80)
         if (localStorage.getItem("dodgeRate") < 0) {
-            localStorage.setItem("dodgeRate",1)
+            localStorage.setItem("dodgeRate",0)
         }
     }
     if (enemyHp <= 0) {
