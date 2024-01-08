@@ -56,18 +56,27 @@ function action(action) {
     if (action == "cac") {
         enemyHp = enemyHp - force
         localStorage.setItem("enemy", enemyName + "," + enemyHp + "," + enemyForce)
-        localStorage.setItem("dodgeRate", Math.round(Math.random() * 100)+reflexes)
+        localStorage.setItem("dodgeRate", (80-reflexes)/80)
+        if (localStorage.getItem("dodgeRate") > 1) {
+            localStorage.setItem("dodgeRate",1)
+        }
     }
     if (action == "distance") {
         damage = Math.round(tech / 2 + force / 5)
         enemyHp = enemyHp - damage
         localStorage.setItem("enemy", enemyName + "," + enemyHp + "," + enemyForce)
-        localStorage.setItem("dodgeRate", Math.round(Math.random() * 100)+25+reflexes)
+        localStorage.setItem("dodgeRate", (50-reflexes)/50)
+        if (localStorage.getItem("dodgeRate") > 1) {
+            localStorage.setItem("dodgeRate",1)
+        }
     }
     if (action == "tech") {
         enemyHp = enemyHp - tech
         localStorage.setItem("enemy", enemyName + "," + enemyHp + "," + enemyForce)
-        localStorage.setItem("dodgeRate", Math.round(Math.random() * 100)+reflexes)
+        localStorage.setItem("dodgeRate", (80-reflexes)/80)
+        if (localStorage.getItem("dodgeRate") > 1) {
+            localStorage.setItem("dodgeRate",1)
+        }
     }
     if (enemyHp <= 0) {
         document.getElementById("combat").style.display = "none"
@@ -77,12 +86,14 @@ function action(action) {
         } else {
             lootItem(1)
         }
-        
+        if (Math.floor(Math.random() * 2) == 0) {
+            lootItem(1)
+            }
         return
     } else {
         enemyAttack()
-    }    
-}
+    } 
+}   
 function enemyAttack() {
     enemy = localStorage.getItem("enemy")
     dodgeRate = localStorage.getItem("dodgeRate")
@@ -90,10 +101,8 @@ function enemyAttack() {
     enemyName = enemy[0]
     enemyForce = enemy[2]
     hp = localStorage.getItem("hp")
-    if (parseInt(dodgeRate) < 50) {
-        hp = hp - enemyForce
-        localStorage.setItem("hp", hp)
-    }
+    hp = Math.floor(hp - enemyForce*dodgeRate)
+    localStorage.setItem("hp", hp)
     localStorage.setItem("hp", hp)
     if (hp <= 0) {
         death("Vous vous êtes fait tuer par " + enemyName)
@@ -110,7 +119,7 @@ function checkPsychose() {
 
 function death(deathMessage) {
     localStorage.setItem("deathMessage", deathMessage)
-    window.location.href = "/deathscreen.html" // le lien vers la page
+    window.location = "../deathscreen.html" // le lien vers la page
 }
 
 function init() {
@@ -144,19 +153,19 @@ function hub(opt) {
     } else if (opt == "show") {
         locat1 = document.getElementById('locat1')
         if (localStorage.getItem("space") == "true") {
-            locat1.innerHTML = `<img src="Images and scripts/Base_spatial_fire.png" alt="Base spatial">`
+            locat1.innerHTML = `<img src="./Images and scripts/Base_spatial_fire.png" alt="Base spatial">`
         } else {
-            locat1.innerHTML = `<a href="Mission Base Spatiale/mission.html"><img src="Images and scripts/Base_spatial.png" alt="Base spatial"></a><h3>Aller à la base spatial</h3>`
+            locat1.innerHTML = `<a href="Mission Base Spatiale/mission.html"><img src="./Images and scripts/Base_spatial.png" alt="Base spatial"></a><h3>Aller à la base spatial</h3>`
         }
         locat2 = document.getElementById('locat2')
         if (localStorage.getItem("yakuza") == "true") {
-            locat2.innerHTML = `<img src="Images and scripts/kill.png" alt="Base de yakuzas">`
+            locat2.innerHTML = `<img src="./Images and scripts/kill.png" alt="Base de yakuzas">`
         } else {
-            locat2.innerHTML = `<a href="Mission Yakuzas2/mission.html"><img src="Images and scripts/Yakuzas.png" alt="Base de yakuzas"></a><h3>Aller à la base des yakuzas</h3>`
+            locat2.innerHTML = `<a href="Mission Yakuzas2/mission.html"><img src="./Images and scripts/Yakuzas.png" alt="Base de yakuzas"></a><h3>Aller à la base des yakuzas</h3>`
         }
         locat3 = document.getElementById("locat3")
         if (localStorage.getItem("yakuza") == "true" || localStorage.getItem("space") == "true"){
-            locat3.innerHTML = `<a href="Mission Labo MC/mission.html"><img src="Images and scripts/labo.png" alt="Laboratoire d'Antalis"></a><h3>Aller au laboratoire</h3>`
+            locat3.innerHTML = `<a href="Mission Labo MC/mission.html"><img src="./Images and scripts/labo.png" alt="Laboratoire d'Antalis"></a><h3>Aller au laboratoire</h3>`
         }
     }
 }
@@ -168,19 +177,19 @@ function hubTeam(opt) {
     } else if (opt == "show") {
         locat1 = document.getElementById('locat1')
         if (localStorage.getItem("vol") == "true") {
-            locat1.innerHTML = `<img src="Images and scripts/voler.png" alt="Vol de voiture">`
+            locat1.innerHTML = `<img src="./Images and scripts/voler.png" alt="Vol de voiture">`
         } else {
-            locat1.innerHTML = `<a href="Mission vol de voiture/mission.html"><img src="Images and scripts/vol.png" alt="Vol de voiture"></a><h3>Vol de voiture</h3>`
+            locat1.innerHTML = `<a href="Mission vol de voiture/mission.html"><img src="./Images and scripts/vol.png" alt="Vol de voiture"></a><h3>Vol de voiture</h3>`
         }
         locat2 = document.getElementById('locat2')
         if (localStorage.getItem("mc") == "true") {
-            locat2.innerHTML = `<img src="Images and scripts/Antalis_boom.png" alt="Megacorporation">`
+            locat2.innerHTML = `<img src="./Images and scripts/Antalis_boom.png" alt="Megacorporation">`
         } else {
-            locat2.innerHTML = `<a href="Mission Mégacorporation avec la team/mission.html"><img src="Images and scripts/Antalis.png" alt="Megacorporation"></a><h3>Aller à la mégacorporation</h3>`
+            locat2.innerHTML = `<a href="Mission Mégacorporation avec la team/mission.html"><img src="./Images and scripts/Antalis.png" alt="Megacorporation"></a><h3>Aller à la mégacorporation</h3>`
         }
         locat3 = document.getElementById("locat3")
         if (localStorage.getItem("vol") == "true"|| localStorage.getItem("mc") == "true"){
-            locat3.innerHTML = `<a href="Mission cyber psycho/prémission.html"><img src="Images and scripts/party.png" alt="Faire la fête"></a><h3>Aller à la fête</h3>`
+            locat3.innerHTML = `<a href="Mission cyber psycho/prémission.html"><img src="./Images and scripts/party.png" alt="Faire la fête"></a><h3>Aller à la fête</h3>`
         }
     }
 }
@@ -215,6 +224,7 @@ function lootItem(type, name) {
                 return false
             }
         } else {
+            alert("Vous avez trouvé [" + name + "]")
             localStorage.setItem(implant_type, name)
             maxHp = parseInt(localStorage.getItem("maxHp"))
             localStorage.setItem("maxHp", maxHp + item.vie)
@@ -251,6 +261,7 @@ function lootItem(type, name) {
                     return false
                 }
             } else {
+                alert("Vous avez trouvé [" + item.name + "]")
                 localStorage.setItem("arme", item.name)
                 maxHp = parseInt(localStorage.getItem("maxHp"))
                 localStorage.setItem("maxHp", maxHp + item.vie)
@@ -286,6 +297,7 @@ function lootItem(type, name) {
                     return false
                 }
             } else {
+                alert("Vous avez trouvé [" + item.name + "]")
                 localStorage.setItem(implant_type, item.name)
                 maxHp = parseInt(localStorage.getItem("maxHp"))
                 localStorage.setItem("maxHp", maxHp + item.vie)
