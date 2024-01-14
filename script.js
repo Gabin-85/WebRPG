@@ -262,7 +262,7 @@ function lootItem(type, name) {
                     localStorage.setItem("psy", psy - item_to_replace.psy + item.psy)
                     return true
                 } else {
-                    alert("opération annulée.")
+                    alert("Aucun changement")
                     return false
                 }
             }
@@ -284,7 +284,7 @@ function lootItem(type, name) {
                     localStorage.setItem("psy", psy - item_to_replace.psy + item.psy)
                     return true
                 } else {
-                    alert("opération annulée.")
+                    alert("Aucun changement")
                     return false
                 }
             } else if (localStorage.getItem(implant_type) != item.name) {
