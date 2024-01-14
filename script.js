@@ -83,7 +83,7 @@ function action(action) {
         checkPsychose()
         document.getElementById("combat").style.display = "none"
         document.getElementById("victory").style.display = "block"
-        if (Math.floor(Math.random() * 3) + 1 == 1) {
+        if (Math.floor(Math.random() * 3) == 0) {
            lootItem(0) 
         } else {
             lootItem(1)
@@ -91,6 +91,9 @@ function action(action) {
         if (Math.floor(Math.random() * 2) == 0) {
             lootItem(1)
             }
+        if (Math.floor(Math.random() * 15) == 0) {
+            lootItem(2)
+        }
         return
     } else {
         enemyAttack()
@@ -127,7 +130,7 @@ function death(deathMessage) {
 function init() {
     pseudo = document.getElementById("input_pseudo").value
     localStorage.clear()
-    localStorage.setItem("arme","Poing")
+    localStorage.setItem("arme","Poing américain")
     localStorage.setItem("pseudo", pseudo)
     localStorage.setItem("force", "5")
     localStorage.setItem("hp", "5")
@@ -206,9 +209,9 @@ function lootItem(type, name) {
     if (name) {
         let item = getItem(type, name)
         let implant_type = item.type
-        if (localStorage.getItem(implant_type)) {
+        if (localStorage.getItem(implant_type)  && localStorage.getItem(implant_type) != name){
             if (confirm("Voulez vous remplacer [" + localStorage.getItem(implant_type) + "] par l'implant [" + name + "]")) {
-                let item_to_replace = getItem(localStorage.getItem(implant_type), type)
+                let item_to_replace = getItem(type, localStorage.getItem(implant_type))
                 localStorage.setItem(implant_type, name)
                 maxHp = parseInt(localStorage.getItem("maxHp"))
                 localStorage.setItem("maxHp", maxHp - item_to_replace.vie + item.vie)
@@ -222,10 +225,10 @@ function lootItem(type, name) {
                 localStorage.setItem("psy", psy - item_to_replace.psy + item.psy)
                 return true
             } else {
-                alert("opération annulée.")
+                alert("Aucun changement")
                 return false
             }
-        } else {
+        } else if (localStorage.getItem(implant_type) != name) {
             alert("Vous avez trouvé [" + name + "]")
             localStorage.setItem(implant_type, name)
             maxHp = parseInt(localStorage.getItem("maxHp"))
@@ -244,7 +247,7 @@ function lootItem(type, name) {
         let item = getItem(type)
         if (type == 0) {
             let item_to_replace = getItem(0, localStorage.getItem("arme"))
-            if (item_to_replace) {
+            if (item_to_replace && item_to_replace.name != item.name) {
                 if (confirm("Voulez vous remplacer votre [" + item_to_replace.name + "] par l'arme [" + item.name + "]")) {
                     localStorage.setItem("arme", item.name)
                     maxHp = parseInt(localStorage.getItem("maxHp"))
@@ -262,26 +265,12 @@ function lootItem(type, name) {
                     alert("opération annulée.")
                     return false
                 }
-            } else {
-                alert("Vous avez trouvé [" + item.name + "]")
-                localStorage.setItem("arme", item.name)
-                maxHp = parseInt(localStorage.getItem("maxHp"))
-                localStorage.setItem("maxHp", maxHp + item.vie)
-                force = parseInt(localStorage.getItem("force"))
-                localStorage.setItem("force", force + item.force)
-                reflexes = parseInt(localStorage.getItem("reflexes"))
-                localStorage.setItem("reflexes", reflexes + item.reflexes)
-                tech = parseInt(localStorage.getItem("tech"))
-                localStorage.setItem("tech", tech + item.tech)
-                psy = parseInt(localStorage.getItem("psy"))
-                localStorage.setItem("psy", psy + item.psy)
-                return true
             }
         } else if (type == 1) {
             let implant_type = item.type
-            if (localStorage.getItem(implant_type)) {
+            if (localStorage.getItem(implant_type) && localStorage.getItem(implant_type) != item.name) {
                 if (confirm("Voulez vous remplacer [" + localStorage.getItem(implant_type) + "] par l'implant [" + item.name + "]")) {
-                    let item_to_replace = getItem(localStorage.getItem(implant_type), type)
+                    let item_to_replace = getItem(type, localStorage.getItem(implant_type))
                     localStorage.setItem(implant_type, item.name)
                     maxHp = parseInt(localStorage.getItem("maxHp"))
                     localStorage.setItem("maxHp", maxHp - item_to_replace.vie + item.vie)
@@ -298,7 +287,7 @@ function lootItem(type, name) {
                     alert("opération annulée.")
                     return false
                 }
-            } else {
+            } else if (localStorage.getItem(implant_type) != item.name) {
                 alert("Vous avez trouvé [" + item.name + "]")
                 localStorage.setItem(implant_type, item.name)
                 maxHp = parseInt(localStorage.getItem("maxHp"))
@@ -325,7 +314,7 @@ function getItem(type, name) {
     items = [
         [
             {
-                name: "Poing",
+                name: "Poing américain",
                 vie: 0,
                 force: 0,
                 reflexes: 0,
