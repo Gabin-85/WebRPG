@@ -1,4 +1,4 @@
-// Système de combat fait par Soullard Syméon  --[Syméon]
+// Système de combat et de loot fait par Soullard Syméon  --[Syméon]
 // Système d'objet fait par Luan  --[Luan]
 //Je confirme  --[Gabin]
 
