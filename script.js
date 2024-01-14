@@ -303,8 +303,7 @@ function lootItem(type, name) {
                 return true
             }
         } else if (type == 2) {
-            alert("Médicament consommé !")
-            vie = maxHp
+            alert("Médicament consommé !  [+" + -1*item.psy + " psy]" )
             localStorage.setItem("psy", psy + item.psy)
             return true
         }
